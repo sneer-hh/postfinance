@@ -34,6 +34,7 @@ public class Test {
 
     pfMainPage.clickOnLogin(driver);
     Thread.sleep(3000);
+    Thread.sleep(3000);
     }
 
 }
