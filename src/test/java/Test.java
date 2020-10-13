@@ -1,6 +1,5 @@
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -33,7 +32,6 @@ public class Test {
     PFMainPage pfMainPage = new PFMainPage();
 
     pfMainPage.clickOnLogin(driver);
-    Thread.sleep(3000);
     Thread.sleep(3000);
     }
 
