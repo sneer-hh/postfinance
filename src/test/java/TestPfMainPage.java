@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 
-public class Test {
+public class TestPfMainPage {
     private WebDriver driver;
 
     @Before
@@ -30,20 +30,13 @@ public class Test {
     }
 
     @org.junit.Test
-    public void google() {
+    public void dingsda() {
         driver.get("https://www.postfinance.ch/de/privat.html");
 
-        new PFMainPage().clickOnLogin(driver);
-
-        LoginPage lp = new LoginPage();
-        lp.clickOnDemoVersion(driver);
-
-        // Thread.sleep(3000);
-
-        DemoPage dp = new DemoPage();
-        Assert.assertTrue("Header is empty or wrong", dp.isHeaderDisplayed(driver));
-        //  Assert.assertEquals("Demo E-Finance und Loginverfahren", dp.getText(driver));
-
+        //new PFMainPage().isHeaderDisplayed(driver);
+        //Assert.assertTrue(new PFMainPage().isHeaderDisplayed());
+        Assert.assertTrue(new PFMainPage().isHeaderDisplayed(driver));
+        Assert.assertEquals("Falscher Headertext", "Services und Support", new PFMainPage().getTextFromHeader(driver));
     }
 
 }

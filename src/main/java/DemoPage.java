@@ -6,7 +6,7 @@ public class DemoPage {
     By header = By.xpath("//*[@id='main-content']/div[1]/div");
     By headerText = By.xpath("//*[@id='header']/div[1]/nav/ul/li[1]/a");
 
-    public boolean isTextdisplayed(WebDriver driver) {
+    public boolean isHeaderDisplayed(WebDriver driver) {
         return driver.findElement(header).isDisplayed();
     }
 

@@ -8,7 +8,7 @@ public class LoginPage {
     By demoVersion = xpath("//a[@class='link hideIfMobile openInOverlay']");
 
 
-    public void clickOnLogin(WebDriver driver) {
+    public void clickOnDemoVersion(WebDriver driver) {
         driver.findElement(demoVersion).click();
     }
 }
