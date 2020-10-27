@@ -2,35 +2,48 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.nio.file.Paths;
-import java.util.concurrent.TimeUnit;
 
 
 public class Test {
-    private WebDriver driver;
+
+    //    @Before
+//    public void setUp() {
+//        System.setProperty("webdriver.chrome.driver",
+//                Paths.get("src/test/resources/chromedriver_win32/chromedriver.exe").toString());
+//        if (driver == null) {
+//            driver = new ChromeDriver();
+//            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//        }
+//    }
+    WebDriver driver;
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                Paths.get("src/test/resources/chromedriver_win32/chromedriver.exe").toString());
-        if (driver == null) {
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        }
+        WebDriverSetup webDriverSetup = new WebDriverSetup();
+        driver = webDriverSetup.setUp();
     }
 
     @After
     public void tearDown() {
-        if (driver != null) {
-            driver.close();
-            driver.quit();
-        }
+        new WebDriverSetup().tearDown(driver);
     }
+
+
+//
+//    @After
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.close();
+//            driver.quit();
+//        }
+//    }
 
     @org.junit.Test
     public void google() {
+
+        // WebDriverSetup webDriverSetup = new WebDriverSetup();
+        // WebDriver driver = webDriverSetup.setUp();
+
         driver.get("https://www.postfinance.ch/de/privat.html");
 
         new PFMainPage().clickOnLogin(driver);
