@@ -1,7 +1,12 @@
+package vererbung.ohne;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import postfinance.DemoPage;
+import postfinance.LoginPage;
+import postfinance.PFMainPage;
 
 
 public class Test {
@@ -20,7 +25,7 @@ public class Test {
     @Before
     public void setUp() {
         WebDriverSetup webDriverSetup = new WebDriverSetup();
-        driver = webDriverSetup.setUp();
+        driver = webDriverSetup.setup();
     }
 
     @After
@@ -41,7 +46,7 @@ public class Test {
     @org.junit.Test
     public void google() {
 
-        // WebDriverSetup webDriverSetup = new WebDriverSetup();
+        // vererbung.ohne.WebDriverSetup webDriverSetup = new vererbung.ohne.WebDriverSetup();
         // WebDriver driver = webDriverSetup.setUp();
 
         driver.get("https://www.postfinance.ch/de/privat.html");

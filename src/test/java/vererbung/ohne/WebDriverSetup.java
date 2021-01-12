@@ -1,3 +1,5 @@
+package vererbung.ohne;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,7 +10,7 @@ public class WebDriverSetup {
 
 
     // @Before
-    public WebDriver setUp() {
+    public WebDriver setup() {
         WebDriver driver = null;
         System.setProperty("webdriver.chrome.driver",
                 Paths.get("src/test/resources/chromedriver_win32/chromedriver.exe").toString());
